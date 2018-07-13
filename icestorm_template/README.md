@@ -27,7 +27,7 @@ make -j$(nproc)
 sudo make install
 cd ..
 
-
+pip install --user tinyprog
 ```
 
 Copy the icestorm_template directory to a new project directory with a name of your choosing:
@@ -42,9 +42,9 @@ cd ~/my_tinyfpga_project
 make
 ```
 
-The programmer script lives in this repo in [programmer/tinyfpgab.py](https://github.com/tinyfpga/TinyFPGA-B-Series/blob/master/programmer/tinyfpgab.py) Program the TinyFPGA B-series board with the bitstream:
+Program the TinyFPGA B-series board with the bitstream:
 ```shell
-python $TINYFPGA_B_REPO/programmer/tinyfpgab.py --program TinyFPGA_B.bin
+make prog
 ```
 
 
