@@ -14,7 +14,7 @@
 #  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 #  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-PROJ = TinyFPGA_B
+PROJ = top
 
 PIN_DEF = pins.pcf
 DEVICE = lp8k
@@ -49,11 +49,11 @@ all: $(PROJ).rpt $(PROJ).bin
 	vvp -N $< +vcd=$@
 
 prog: $(PROJ).bin
-	iceprog $<
+	tinyprog -p $<
 
 sudo-prog: $(PROJ).bin
 	@echo 'Executing prog as root!!!'
-	sudo iceprog $<
+	sudo tinyprog -p $<
 
 clean:
 	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).rpt $(PROJ).bin
