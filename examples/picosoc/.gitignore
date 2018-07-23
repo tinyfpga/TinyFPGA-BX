@@ -1,0 +1,15 @@
+/spiflash_tb.vcd
+/spiflash_tb.vvp
+/firmware.elf
+/firmware.hex
+/firmware.bin
+/hardware.asc
+/hardware.bin
+/hardware.blif
+/hardware.log
+/hardware.rpt
+/hardware_syn.v
+/hardware_syn_tb.vvp
+/hardware_tb.vvp
+/testbench.vcd
+/cmos.log

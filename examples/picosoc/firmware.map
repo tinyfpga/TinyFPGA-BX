@@ -1,0 +1,80 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000000050000 0x0000000000100000 xr
+RAM              0x0000000000000000 0x0000000000002000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000000050000      0x1dc
+                0x0000000000050000                . = ALIGN (0x4)
+ *(.text)
+ .text          0x0000000000050000      0x16a /tmp/ccBvQ25N.o
+ .text          0x000000000005016a       0x72 /tmp/cchneX8U.o
+                0x000000000005016a                set_irq_mask
+                0x0000000000050170                main
+ *(.text*)
+ *(.rodata)
+ *(.rodata*)
+ *(.srodata)
+ *(.srodata*)
+ *(.eh_frame)
+ *(.eh_frame*)
+                0x00000000000501dc                . = ALIGN (0x4)
+                0x00000000000501dc                _etext = .
+                0x00000000000501dc                _sidata = _etext
+
+.rela.dyn       0x00000000000501dc        0x0
+ .rela.text     0x00000000000501dc        0x0 /tmp/ccBvQ25N.o
+
+.data           0x0000000000000000       0x14 load address 0x00000000000501dc
+                0x0000000000000000                . = ALIGN (0x4)
+                0x0000000000000000                _sdata = .
+                0x0000000000000000                _ram_start = .
+ *(.data)
+ .data          0x0000000000000000       0x14 /tmp/ccBvQ25N.o
+ .data          0x0000000000000014        0x0 /tmp/cchneX8U.o
+ *(.data*)
+ *(.sdata)
+ *(.sdata*)
+ *(.init_array)
+ *(.init_array*)
+                0x0000000000000014                . = ALIGN (0x4)
+                0x0000000000000014                _edata = .
+
+.bss            0x0000000000000014        0x0 load address 0x00000000000501f0
+                0x0000000000000014                . = ALIGN (0x4)
+                0x0000000000000014                _sbss = .
+ *(.bss)
+ .bss           0x0000000000000014        0x0 /tmp/ccBvQ25N.o
+ .bss           0x0000000000000014        0x0 /tmp/cchneX8U.o
+ *(.bss*)
+ *(.sbss)
+ *(.sbss*)
+ *(COMMON)
+                0x0000000000000014                . = ALIGN (0x4)
+                0x0000000000000014                _ebss = .
+
+.heap           0x0000000000000014        0x0
+                0x0000000000000014                . = ALIGN (0x4)
+                0x0000000000000014                _heap_start = .
+LOAD /tmp/ccBvQ25N.o
+LOAD /tmp/cchneX8U.o
+OUTPUT(firmware.elf elf32-littleriscv)
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 /tmp/cchneX8U.o
+                                         0x12 (size before relaxing)
+
+Cross Reference Table
+
+Symbol                                            File
+_ebss                                             /tmp/cchneX8U.o
+_sbss                                             /tmp/cchneX8U.o
+debug                                             /tmp/ccBvQ25N.o
+main                                              /tmp/cchneX8U.o
+                                                  /tmp/ccBvQ25N.o
+set_irq_mask                                      /tmp/cchneX8U.o
