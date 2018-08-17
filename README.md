@@ -2,7 +2,7 @@
 The TinyFPGA BX board is a tiny FPGA board with low cost per logic element and convenient USB bitstream programming capability.  It measures just 18mm x 36mm and is a perfect fit for breadboards. The heart of the BX board is a iCE40LP8K-CM81 FPGA from Lattice.  
 
 ## Getting Started on the BX
-The (TinyFPGA BX User Guide)[https://tinyfpga.com/bx/guide.html] will help you get up and running with the BX. 
+The [TinyFPGA BX User Guide](https://tinyfpga.com/bx/guide.html) will help you get up and running with the BX. 
 
 For full details on the ICE40 series of FPGAs you can read the [ICE40 Family Handbook](http://www.latticesemi.com/~/media/LatticeSemi/Documents/Handbooks/iCE40FamilyHandbook.pdf).
 
