@@ -20,6 +20,8 @@ firmware.elf: sections.lds start.S firmware.c
 firmware.bin: firmware.elf
 	riscv32-unknown-elf-objcopy -O binary firmware.elf /dev/stdout > firmware.bin
 
+firmware.hex: firmware.elf
+	riscv32-unknown-elf-objcopy -O verilog firmware.elf firmware.hex
 
 clean:
 	rm -f firmware.elf firmware.hex firmware.bin firmware.o firmware.map \
