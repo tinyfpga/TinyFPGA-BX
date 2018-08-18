@@ -59,6 +59,7 @@ module picosoc (
 	input  flash_io2_di,
 	input  flash_io3_di
 );
+	parameter [0:0] ENABLE_IRQ_QREGS = 0;
 	parameter integer MEM_WORDS = 256;
 	parameter [31:0] STACKADDR = (4*MEM_WORDS);       // end of memory
 	parameter [31:0] PROGADDR_RESET = 32'h 0005_0000; // 1 MB into flash
@@ -122,7 +123,7 @@ module picosoc (
 		.ENABLE_MUL(1),
 		.ENABLE_DIV(1),
 		.ENABLE_IRQ(1),
-		.ENABLE_IRQ_QREGS(1)
+		.ENABLE_IRQ_QREGS(ENABLE_IRQ_QREGS)
 	) cpu (
 		.clk         (clk        ),
 		.resetn      (resetn     ),
