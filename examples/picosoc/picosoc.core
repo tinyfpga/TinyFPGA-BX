@@ -1,0 +1,33 @@
+CAPI=2:
+name : tinyfpga:bx:picosoc:0
+
+filesets:
+  rtl:
+    files:
+      - hardware.v : {file_type : verilogSource}
+    depend : [picosoc]
+  constraints:
+    files:
+      - hardware.pcf : {file_type : PCF}
+  tb:
+    files:
+      - hardware_tb.v : {file_type : verilogSource}
+    depend : [at25sf081, vlog_tb_utils, "yosys:techlibs:ice40"]
+
+targets:
+  synth:
+    default_tool : icestorm
+    filesets: [rtl, constraints]
+    tools:
+      icestorm:
+        arachne_pnr_options : [-d, 8k, -P, cm81]
+        nextpnr_options : [--lp8k, --package, cm81]
+        pnr: next
+    toplevel : hardware
+  sim:
+    default_tool: icarus
+    filesets: [rtl, tb]
+    tools:
+      modelsim:
+        vlog_options: [-timescale=1ns/100ps]
+    toplevel: hardware_tb
