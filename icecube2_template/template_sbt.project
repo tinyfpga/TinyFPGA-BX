@@ -1,11 +1,11 @@
 [Project]
 ProjectVersion=2.0
-Version=Lattice Semiconductor Corporation iCEcube - Release: 2017.01.27914 - Build Date: Jan 12 2017 19:10:45
+Version=Lattice Semiconductor Corporation iCEcube - Release: 2017.08.27940 - Build Date: Sep 11 2017 17:40:01
 ProjectName=template
 Vendor=SiliconBlue
 Synthesis=synplify
-ProjectVFiles=verilog/TinyFPGA_B.v=work
-ProjectCFiles=
+ProjectVFiles=verilog/TinyFPGA_BX.v=work
+ProjectCFiles=constraints/clk.sdc
 CurImplementation=template_Implmnt
 Implementations=template_Implmnt
 StartFromSynthesis=yes
@@ -46,12 +46,12 @@ DevicePower=
 NetlistFile=template_Implmnt/template.edf
 AdditionalEDIFFile=
 IPEDIFFile=
-DesignLib=template_Implmnt/sbt/netlist/oadb-TinyFPGA_B
+DesignLib=template_Implmnt/sbt/netlist/oadb-TinyFPGA_BX
 DesignView=_rt
-DesignCell=TinyFPGA_B
+DesignCell=TinyFPGA_BX
 SynthesisSDCFile=template_Implmnt/template.scf
 UserPinConstraintFile=
-UserSDCFile=constraints/clk.sdc
+UserSDCFile=
 PhysicalConstraintFile=constraints/pins.pcf
 BackendImplPathName=
 Devicevoltage=1.14

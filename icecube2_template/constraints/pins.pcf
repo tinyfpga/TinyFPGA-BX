@@ -12,29 +12,61 @@
 
 # ##############################################################################
 
-###IOSet List 24
-set_io pin13 J1
-set_io pin15_sdi H7
-set_io pin1_usb_dp A3
-set_io pin20 E8
-set_io pin2_usb_dn A4
-set_io pin4 B2
-set_io pin10 E1
-set_io pin18 D9
-set_io pin7 B1
-set_io pin11 G1
-set_io pin19 C9
-set_io pin22 A8
-set_io pin6 A1
-set_io pin12 H1
-set_io pin16_sck G7
-set_io pin21 A9
-set_io pin5 A2
-set_io pin9 D1
-set_io pin14_sdo G6
-set_io pin24 A6
-set_io pin8 C1
-set_io pin17_ss F7
-set_io pin23 A7
-set_io pin3_clk_16mhz B4
+# Left side of board
+set_io PIN_1 A2
+set_io PIN_2 A1
+set_io PIN_3 B1
+set_io PIN_4 C2
+set_io PIN_5 C1
+set_io PIN_6 D2
+set_io PIN_7 D1
+set_io PIN_8 E2
+set_io PIN_9 E1
+set_io PIN_10 G2
+set_io PIN_11 H1
+set_io PIN_12 J1
+set_io PIN_13 H2
+
+# Right side of board
+set_io PIN_14 H9
+set_io PIN_15 D9
+set_io PIN_16 D8
+set_io PIN_17 C9
+set_io PIN_18 A9
+set_io PIN_19 B8
+set_io PIN_20 A8
+set_io PIN_21 B7
+set_io PIN_22 A7
+set_io PIN_23 B6
+set_io PIN_24 A6
+
+# SPI flash interface on bottom of board
+set_io SPI_SS F7
+set_io SPI_SCK G7
+set_io SPI_IO0 G6
+set_io SPI_IO1 H7
+set_io SPI_IO2 H4
+set_io SPI_IO3 J8
+
+# General purpose pins on bottom of board
+set_io PIN_25 G1
+set_io PIN_26 J3
+set_io PIN_27 J4
+set_io PIN_28 G9
+set_io PIN_29 J9
+set_io PIN_30 E8
+set_io PIN_31 J2
+
+# LED
+set_io LED B3
+
+# USB
+set_io USBP B4
+set_io USBN A4
+set_io USBPU A3
+
+# 16MHz clock
+set_io CLK_16mhz B2 # input
+
+
 
