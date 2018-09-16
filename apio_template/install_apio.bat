@@ -1,5 +1,4 @@
-pip install apio==0.4.0b3 tinyprog
+pip install apio tinyprog
 apio install system scons icestorm drivers
 apio drivers --serial-enable
 @pause
-
