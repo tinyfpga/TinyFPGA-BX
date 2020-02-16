@@ -10,7 +10,7 @@ hardware.asc: hardware.pcf hardware.blif
 	arachne-pnr -d 8k -P cm81 -o hardware.asc -p hardware.pcf hardware.blif
 
 hardware.bin: hardware.asc
-	icetime -d hx8k -c 12 -mtr hardware.rpt hardware.asc
+	icetime -d lp8k -c 12 -mtr hardware.rpt hardware.asc
 	icepack hardware.asc hardware.bin
 
 
