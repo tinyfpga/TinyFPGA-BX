@@ -2,7 +2,7 @@
 The TinyFPGA BX board is a tiny FPGA board with low cost per logic element and convenient USB bitstream programming capability.  It measures just 18mm x 36mm and is a perfect fit for breadboards. The heart of the BX board is a iCE40LP8K-CM81 FPGA from Lattice.  
 
 ## Getting Started on the BX
-The [TinyFPGA BX User Guide](https://tinyfpga.com/bx/guide.html) will help you get up and running with the BX. 
+The [TinyFPGA BX User Guide](https://tinyfpga.com/bx/guide.html) will help you get up and running with the BX.
 
 For full details on the ICE40 series of FPGAs you can read the [ICE40 Family Handbook](http://www.latticesemi.com/~/media/LatticeSemi/Documents/Handbooks/iCE40FamilyHandbook.pdf).
 
@@ -29,6 +29,9 @@ This is a template iCEcube2 project for developing your own designs to program o
 
 ### icestorm_template
 This is a template IceStorm project for developing your own designs to program onto the board.  It takes care of pin and clock constraints.  Just edit the TinyFPGA_BX.v file to add your designs module(s).  Use `make` to build your project.
+
+### apio_template
+This is a template using [apio](https://github.com/FPGAwars/apio) project for developing your own designs to program onto the board.  It takes care of pin and clock constraints.  Just edit the TinyFPGA_BX.v file to add your designs module(s).  Use `apio build` to build your project and `apio upload` to upload the bitstream to your board.
 
 ## Project Log
 For more information on the development and production of the B-Series please read and follow the [TinyFPGA B-Series Project Page](https://hackaday.io/project/26848-tinyfpga-b-series) at hackaday.io.
