@@ -209,10 +209,36 @@ start:
 	addi x30, zero, 0
 	addi x31, zero, 0
 
+    # copy data section
+    la a0, _sidata                      # load _sidata to a0
+    la a1, _sdata                       # load _sdata to a1
+    la a2, _edata                       # load _edata to a2
+    bge a1, a2, end_init_data           # if _edata > _sdata jump to end
 
-        call main
+loop_init_data:
+    lw a3, 0(a0)                        # load data at a0 to a3
+    sw a3, 0(a1)                        # store data in a3 to a1 (_sdata)
+    addi a0, a0, 4                      # add 4 to a0
+    addi a1, a1, 4                      # add 4 to a1
+    blt a1, a2, loop_init_data          # if a1 < a2 finish
+
+end_init_data:
+
+    # zero-init bss section
+    la a0, _sbss
+    la a1, _ebss
+    bge a0, a1, end_init_bss
+
+loop_init_bss:
+    sw zero, 0(a0)
+    addi a0, a0, 4
+    blt a0, a1, loop_init_bss
+
+end_init_bss:
+    call main
+
 loop:
-        j loop
+    j loop
 
 
 

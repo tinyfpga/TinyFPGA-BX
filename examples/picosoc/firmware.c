@@ -25,11 +25,6 @@ uint32_t set_irq_mask(uint32_t mask); asm (
 void main() {
     set_irq_mask(0xff);
 
-    // zero out .bss section
-    for (uint32_t *dest = &_sbss; dest < &_ebss;) {
-        *dest++ = 0;
-    }
-
     // switch to dual IO mode
     reg_spictrl = (reg_spictrl & ~0x007F0000) | 0x00400000;
  
