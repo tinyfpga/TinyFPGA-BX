@@ -121,6 +121,7 @@ module hardware (
     end
 
     picosoc #(
+        .ENABLE_IRQ_QREGS(1),
         .PROGADDR_RESET(32'h0005_0000), // beginning of user space in SPI flash
         .PROGADDR_IRQ(32'h0005_0010),
         .MEM_WORDS(2048)                // use 2KBytes of block RAM by default
