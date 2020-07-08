@@ -15,7 +15,7 @@ hardware.bin: hardware.asc
 
 
 firmware.elf: sections.lds start.S firmware.c 
-	riscv32-unknown-elf-gcc -march=rv32imc -nostartfiles -Wl,-Bstatic,-T,sections.lds,--strip-debug,-Map=firmware.map,--cref  -ffreestanding -nostdlib -o firmware.elf start.S firmware.c
+	riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -nostartfiles -Wl,-Bstatic,-T,sections.lds,--strip-debug,-Map=firmware.map,--cref  -ffreestanding -nostdlib -o firmware.elf start.S firmware.c
 
 firmware.bin: firmware.elf
 	riscv32-unknown-elf-objcopy -O binary firmware.elf /dev/stdout > firmware.bin
