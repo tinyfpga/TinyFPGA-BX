@@ -21,11 +21,11 @@ DEVICE = lp8k
 
 all: $(PROJ).rpt $(PROJ).bin
 
-%.blif: %.v
-	yosys -p 'synth_ice40 -top $(PROJ) -blif $@' $<
+%.blif %.json : %.v
+	yosys -p 'synth_ice40 -top $(PROJ) -blif $@ -json $*.json' $<
 
-%.asc: $(PIN_DEF) %.blif
-	arachne-pnr -d 8k -P cm81 -o $@ -p $^
+%.asc: $(PIN_DEF) %.blif %.json
+	nextpnr-ice40 --$(DEVICE) --package cm81   --json $*.json --asc $@ --pcf  $(PIN_DEF)
 
 %.bin: %.asc
 	icepack $< $@
@@ -56,7 +56,7 @@ sudo-prog: $(PROJ).bin
 	sudo tinyprog -p $<
 
 clean:
-	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).rpt $(PROJ).bin
+	rm -f $(PROJ).blif $(PROJ).asc $(PROJ).rpt $(PROJ).bin $(PROJ).json
 
 .SECONDARY:
 .PHONY: all prog clean
