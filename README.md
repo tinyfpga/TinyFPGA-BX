@@ -22,7 +22,7 @@ For full details on the ICE40 series of FPGAs you can read the [ICE40 Family Han
 
 ## Project Directory Structure
 ### board
-This contains a [KiCad](http://kicad-pcb.org/) project with the schematic and layout of the B-series boards.  The board is designed with 4/4mil track size/spacing and 0.2mm hole size.  BOM list for the BX board is available here as well.
+This contains a [KiCad](http://kicad.org/) project with the schematic and layout of the B-series boards.  The board is designed with 4/4mil track size/spacing and 0.2mm hole size.  BOM list for the BX board is available here as well.
 
 ### icecube2_template
 This is a template iCEcube2 project for developing your own designs to program onto the board.  It takes care of pin and clock constraints.  Just edit the TinyFPGA_BX.v file to add your designs module(s).
