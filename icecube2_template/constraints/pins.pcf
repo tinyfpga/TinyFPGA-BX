@@ -36,5 +36,6 @@ set_io pin24 A6
 set_io pin8 C1
 set_io pin17_ss F7
 set_io pin23 A7
-set_io pin3_clk_16mhz B4
+set_io pin3_clk_16mhz B2
+set_io user_led B3
 
