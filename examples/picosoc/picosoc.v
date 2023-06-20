@@ -21,7 +21,7 @@
 `error "picosoc.v must be read before picorv32.v!"
 `endif
 
-`define PICORV32_REGS picosoc_regs
+// `define PICORV32_REGS picosoc_regs
 
 module picosoc (
 	input clk,

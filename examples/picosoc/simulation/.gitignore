@@ -1,0 +1,6 @@
+firmware.bin
+firmware.elf
+flash.bin
+flash.hex
+testbench.vcd
+testbench.vvp
