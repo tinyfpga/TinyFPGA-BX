@@ -1,0 +1,87 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00050000         0x00100000         xr
+RAM              0x00000000         0x00002000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+
+.text           0x00050000      0x1ac
+                0x00050000                        . = ALIGN (0x4)
+ *(.text)
+ .text          0x00050000      0x13a /tmp/cck7Jikq.o
+ .text          0x0005013a       0x72 /tmp/ccLqa5rJ.o
+                0x0005013a                set_irq_mask
+                0x00050140                main
+ *(.text*)
+ *(.rodata)
+ *(.rodata*)
+ *(.srodata)
+ *(.srodata*)
+ *(.eh_frame)
+ *(.eh_frame*)
+                0x000501ac                        . = ALIGN (0x4)
+                0x000501ac                        _etext = .
+                0x000501ac                        _sidata = _etext
+
+.rela.dyn       0x000501ac        0x0
+ .rela.text     0x000501ac        0x0 /tmp/cck7Jikq.o
+
+.data           0x00000000       0x14 load address 0x000501ac
+                0x00000000                        . = ALIGN (0x4)
+                0x00000000                        _sdata = .
+                0x00000000                        _ram_start = .
+ *(.data)
+ .data          0x00000000       0x14 /tmp/cck7Jikq.o
+ .data          0x00000014        0x0 /tmp/ccLqa5rJ.o
+ *(.data*)
+ *(.sdata)
+ *(.sdata*)
+ *(.init_array)
+ *(.init_array*)
+                0x00000014                        . = ALIGN (0x4)
+                0x00000014                        _edata = .
+
+.bss            0x00000014        0x0 load address 0x000501c0
+                0x00000014                        . = ALIGN (0x4)
+                0x00000014                        _sbss = .
+ *(.bss)
+ .bss           0x00000014        0x0 /tmp/cck7Jikq.o
+ .bss           0x00000014        0x0 /tmp/ccLqa5rJ.o
+ *(.bss*)
+ *(.sbss)
+ *(.sbss*)
+ *(COMMON)
+                0x00000014                        . = ALIGN (0x4)
+                0x00000014                        _ebss = .
+
+.heap           0x00000014        0x0
+                0x00000014                        . = ALIGN (0x4)
+                0x00000014                        _heap_start = .
+LOAD /tmp/cck7Jikq.o
+LOAD /tmp/ccLqa5rJ.o
+OUTPUT(firmware/build/firmware.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x00000000       0x2f
+ .riscv.attributes
+                0x00000000       0x2d /tmp/cck7Jikq.o
+ .riscv.attributes
+                0x0000002d       0x2f /tmp/ccLqa5rJ.o
+
+.comment        0x00000000       0x1b
+ .comment       0x00000000       0x1b /tmp/ccLqa5rJ.o
+                                 0x1c (size before relaxing)
+
+Cross Reference Table
+
+Symbol                                            File
+_ebss                                             /tmp/ccLqa5rJ.o
+_sbss                                             /tmp/ccLqa5rJ.o
+debug                                             /tmp/cck7Jikq.o
+main                                              /tmp/ccLqa5rJ.o
+                                                  /tmp/cck7Jikq.o
+set_irq_mask                                      /tmp/ccLqa5rJ.o

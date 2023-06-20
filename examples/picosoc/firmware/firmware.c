@@ -31,8 +31,11 @@ void main() {
     }
 
     // switch to dual IO mode
+    // Dual IO mode is not supported by 'spiflash.v'
+#ifndef SIMU
     reg_spictrl = (reg_spictrl & ~0x007F0000) | 0x00400000;
- 
+#endif 
+
     // blink the user LED
     uint32_t led_timer = 0;
        
