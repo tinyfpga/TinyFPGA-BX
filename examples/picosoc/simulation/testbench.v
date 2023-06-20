@@ -27,7 +27,7 @@ module testbench;
   event ser_sample;
 
   initial begin
-    $dumpfile("simulation/testbench.vcd");
+    $dumpfile("simulation/build/testbench.vcd");
     $dumpvars(0, testbench);
 
     repeat (6) begin
